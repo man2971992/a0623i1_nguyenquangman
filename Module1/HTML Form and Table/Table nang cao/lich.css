@@ -1,0 +1,54 @@
+/*h1{*/
+/*  text-align: center;*/
+/*}*/
+/*div{*/
+/*  !*display: block;*!*/
+/*  background-color: yellow;*/
+/*  width: 50%;*/
+/*}*/
+table{
+  border-spacing: 0;
+  text-align: center;
+  width: 100%;
+}
+.boder{
+  border: 1px solid #cccccc;
+}
+td,th{
+  padding: 10px 20px;
+  font-weight: bold;
+}
+th{
+  border-left: white solid 2px;
+}
+#t7{
+  background-color: #0433FF;
+  color: white;
+}
+#cn{
+  background-color: #FF2600;
+  color: white;
+}
+.ngaythuong{
+  background-color: #FFB300;
+  color: white;
+}
+td.textcn{
+  color: #FF2600;
+}
+td.text7{
+  color: #0433FF;
+}
+sub{
+  color: black;
+}
+div{
+  width: 40%;
+  margin: 0 auto;
+  font-family: Tahoma;
+  font-weight: normal;
+}
+h1{
+  text-align:center;
+  color: #0433FF;
+}

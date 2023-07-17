@@ -1,0 +1,21 @@
+.oden{
+  background-color: black;
+}
+.otrang{
+  background-color: white;
+}
+
+td{
+  text-align: center;
+  width: 70px;
+  height: 70px;
+}
+table{
+  border-spacing: 0;
+}
+div{
+  background-color: #FFB300;
+  width: 700px;
+  height: 650px;
+  margin: 0 auto;
+}
