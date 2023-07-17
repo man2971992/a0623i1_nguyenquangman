@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập Form đơn giản</title>
+  <link href="form_dongian.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="container1">
+  <form id="form1">
+    <h1 id="tieude1">SỞ THÍCH CỦA BẠN</h1>
+    <table>
+      <tr>
+        <td class="textright"><label>Họ và tên</label></td>
+        <td class="textleft"><input type="text" name="yourname" class="yourname"></td>
+      </tr>
+      <tr>
+        <td class="textright"><label>Email</label></td>
+        <td class="textleft"><input type="text" name="email" class="size_input"></td>
+      </tr>
+      <tr>
+        <td class="textright" style="position: relative"><label id="hod">Sở thích</label></td>
+        <td class="textleft">
+          <table>
+            <tr>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Thể thao</td>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Âm nhạc</td>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Đọc sách</td>
+            </tr>
+            <tr>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Lướt Web</td>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Chơi game</td>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Điện ảnh</td>
+            </tr>
+            <tr>
+              <td class="checkbox"><input type="checkbox" name="hobby"> Du lịch</td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="Gửi thông tin" class="btn">
+          <input type="reset" value="Nhập lại" class="btn">
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<div id="container2">
+
+  <form id="form2">
+    <h1 id="title2">ĐĂNG KÝ HỌC VIÊN</h1>
+    <table>
+      <tr>
+        <td class="text_form2"><lable>Họ và tên</lable></td>
+        <td><input type="text" name="yourname" class="yourname size_input"></td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Ngày sinh</lable></td>
+        <td><input type="datetime-local" name="bithday" class="size_input" ></td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Giới tính</lable></td>
+        <td>
+          <input type="radio" name="gender" value="male" checked>Nam
+          <input type="radio" name="gender" value="female">Nữ
+        </td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Địa chỉ</lable></td>
+        <td><textarea name="address" rows="5" cols="40"></textarea></td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Lớp</lable></td>
+        <td>
+          <select name="class" id="class">
+            <option value=""> --Chọn lớp-- </option>
+            <option value="a0623i1">A0623I1</option>
+            <option value="b0623i1">B0623I1</option>
+            <option value="c0623i1">C0623I1</option>
+            <option value="d0623i1">D0623I1</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Email</lable></td>
+        <td><label>
+          <input type="email" name="email" class="size_input">
+        </label></td>
+      </tr>
+      <tr>
+        <td class="text_form2"><lable>Điện thoại</lable></td>
+        <td><label>
+          <input type="number" name="phone" class="size_input">
+        </label></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="submit" value="Đăng ký" class="btn">
+          <input type="reset" value="Nhập lại" class="btn">
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>
