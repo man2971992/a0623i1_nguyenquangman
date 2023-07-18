@@ -1,0 +1,63 @@
+hr {
+    border: 1px dotted #cccccc;
+}
+
+p {
+    margin: 8px 0;
+}
+
+li {
+    margin: 0 0 30px 0;
+}
+
+form {
+    margin-left: 20px;
+}
+
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+}
+
+select {
+    width: 50%;
+    height: 25px;
+}
+
+#gender_other {
+    margin-left: 28px;
+}
+
+#pay {
+    width: 80px;
+}
+#pay1{
+    width: 20px;
+}
+table,td,th{
+    border: 1px solid #999999;
+    border-collapse: collapse;
+    padding: 10px;
+}
+table{
+    width: 100%;
+}
+textarea{
+    width: 100%;
+}
+th{
+    background-color: #E6E6E6;
+}
+.tdline{
+    background-color: #E6E6E6;
+}
+.table_text{
+    text-align: center;
+    width: 200px;
+}
+.table_text>span{
+    display: block;
+}
+.btn{
+    width: 80px;
+    height: 25px;
+}
