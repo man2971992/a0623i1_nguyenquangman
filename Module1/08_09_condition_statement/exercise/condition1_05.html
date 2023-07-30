@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</title>
+</head>
+<body>
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+<!--https://james.codegym.vn/mod/assign/view.php?id=10458-->
+<script>
+    let kiemtra = parseFloat(prompt("Nhập điểm kiểm tra thường xuyên"));
+    let giuaky = parseFloat(prompt("Nhập điểm giữa kỳ"));
+    let cuoiky = parseFloat(prompt("Nhập điểm cuối kỳ"));
+    let diemtb = (kiemtra + giuaky + cuoiky) / 3;
+    if (isNaN(kiemtra) || isNaN(giuaky) || isNaN(cuoiky)) {
+        alert("Bạn chưa nhâp đủ điểm kiểm tra");
+    } else {
+        if (diemtb >= 8) {
+            alert("Bạn đạt dọc sinh giỏi");
+        } else if (diemtb >= 6.5 && diemtb <= 7.9) {
+            alert("Bạn đạt học sinh khá");
+        } else if (diemtb >= 5 && diemtb <= 6.4) {
+            alert("Bạn đạt học sinh trung bình");
+        } else if (diemtb >= 3.5 && diemtb <= 4.9) {
+            alert("Bạn là học sinh yêu");
+        } else {
+            alert("Bạn là học sinh kém");
+        }
+    }
+</script>
+</body>
+</html>
