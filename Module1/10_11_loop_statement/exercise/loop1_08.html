@@ -17,27 +17,31 @@
             let count = 0;
             let num_ran = Math.floor(Math.random() * (b - a + 1)) + a; //Chọn ngẫu nhiên một số trong khoản a--->b
             console.log(num_ran); //Hiển thị số random ở console
-            let num_user = parseInt(prompt("Mời bạn đoán số")); //Yêu câu người chơi đoán 1 số
-            while (num_user !== num_ran) {
-                if (count < 2) {
-                    if (num_user > num_ran) {
-                        alert("Số ban nhập lớn hơn");
-                        num_user = parseInt(prompt("Mời bạn đoán lại số"));
+            let num_user = parseInt(prompt("Mời bạn đoán số (Không được nhập ký tự)")); //Yêu câu người chơi đoán 1 số
+            if (isNaN(num_user)) {
+                alert("Gía trị bạn nhập không phải là số ");
+            } else {
+                while (num_user !== num_ran) {
+                    if (count < 2) {
+                        if (num_user > num_ran) {
+                            alert("Số ban nhập lớn hơn");
+                            num_user = parseInt(prompt("Mời bạn đoán lại số"));
+                        }
+                        if (num_user < num_ran) {
+                            alert("Số ban nhập nhỏ hơn");
+                            num_user = parseInt(prompt("Mời bạn đoán lại số"));
+                        }
+                    } else {
+                        alert("Bạn đã đoán sai 3 lần");
+                        break;
                     }
-                    if (num_user < num_ran) {
-                        alert("Số ban nhập nhỏ hơn");
-                        num_user = parseInt(prompt("Mời bạn đoán lại số"));
-                    }
-                } else {
-                    alert("Bạn đã đoán sai 3 lần");
-                    break;
+                    count++;
                 }
-                count++;
+                if (num_user === num_ran)
+                    alert("Chúc mừng bạn đã đoán đúng");
+                else
+                    alert("Game Over");
             }
-            if (num_user === num_ran)
-                alert("Chúc mừng bạn đã đoán đúng");
-            else
-                alert("Game Over");
         }
 
     }
