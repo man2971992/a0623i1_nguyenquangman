@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giai thừa của một số</title>
+</head>
+<body>
+<script>
+    //Bài 2: Tính giai thừa của một số nguyên dương
+    let n = parseInt(prompt("Nhập một số: "));
+    if (n > 0) {
+        let fac = 1; //Biến chứa giá trị của giai thừa
+        for (let i = 0; i < n; i++) {
+            fac *= n - i;
+        }
+        alert("Giai thừa của " + n + "! là: " + fac.toLocaleString());
+    } else {
+        alert("Yêu cầu bạn nhập số nguyên dương (lớn hơn 0)")
+    }
+</script>
+</body>
+</html>

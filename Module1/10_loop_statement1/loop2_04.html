@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: In hình chữ nhật</title>
+</head>
+<body>
+<script>
+    //Bài 4: In hình chữ nhật
+    for (let i = 0; i < 8; i++) {
+        for (let j = 0; j < 22; j++) {
+            if ((i === 0 || i === 7) || (j === 0 || j === 21)) {
+                document.write("* ");
+            } else {
+                document.write("&ensp;&nbsp;");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

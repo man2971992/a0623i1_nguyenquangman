@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        input {
+            height: 25px;
+            font-size: medium;
+        }
+
+        select {
+            height: 32px;
+            width: 120px;
+            font-size: medium;
+        }
+
+        td, th {
+            padding-right: 70px;
+        }
+
+        button {
+            width: 90px;
+            height: 32px;
+            background-color: #8f82cf;
+            border: 1px solid #acccff;
+            color: white;
+            font-weight: bold;
+            font-size: math;
+            border-radius: 4px 4px;
+        }
+
+        p {
+            color: blue;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="get">
+    <table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="amount" value="1">
+            </td>
+            <td>
+                <select id="from_currency">
+                    <option value="0.000042" selected>VietNam</option>
+                    <option value="23640">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="to_currency">
+                    <option value="0.000042">VietNam</option>
+                    <option value="23640" selected>USD</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="convert()">Convert</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<p>Result: <label id="result"></label>   <label id="cur_unit"></label></p>
+
+<script>
+    function convert() {
+        let result;
+        let amount = parseFloat(document.getElementById("amount").value);
+        let f = parseFloat(document.getElementById("from_currency").value);
+        let t = parseFloat(document.getElementById("to_currency").value);
+        if (f !== t) {
+            result = amount * f;
+            document.getElementById("result").innerText = result;
+        } else {
+            document.getElementById("result").innerText = amount;
+        }
+
+        if (t === 0.000042) {
+            document.getElementById("cur_unit").innerText = " VND";
+        } else {
+            document.getElementById("cur_unit").innerText = " USD";
+        }
+    }
+
+</script>
+</body>
+</html>

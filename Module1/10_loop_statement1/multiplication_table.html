@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng cửu chhương</title>
+</head>
+<body>
+<h2>Bảng cữu chương</h2>
+<script>
+    let x;
+    let y;
+    document.write("<table style='border: 1px solid black'>");
+    for (x = 1; x <= 9; x++) {
+        document.write("<tr>");
+        for (y = 2; y <= 9; y++) {
+            document.write("<td style='border: 1px solid black; width: 150px'>");
+            document.write(y + " x " + x + " = " + x * y);
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>
