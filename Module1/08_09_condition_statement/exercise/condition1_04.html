@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số lớn nhất trong 3 số</title>
+</head>
+<body>
+<!--Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10458-->
+<script>
+    let a = parseInt(prompt("Nhập số thứ nhất: "));
+    let b = parseInt(prompt("Nhập số thứ hai: "));
+    let c = parseInt(prompt("Nhập số thứ ba: "));
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Bạn chưa nhập đủ 3 số");
+    } else {
+        if (a > b && a > c) {
+            alert(a + " là số lớn nhất" + "(" + b + ", " + c + ")");
+        }else if (b>a&&b>c){
+            alert(b + " là số lớn nhất" + "(" + a + ", " + c + ")");
+        }else {
+            alert(c + " là số lớn nhất" + "(" + a + ", " + b + ")");
+        }
+    }
+</script>
+</body>
+</html>

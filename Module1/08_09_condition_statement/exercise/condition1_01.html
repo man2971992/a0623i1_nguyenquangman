@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hiện phép tính chia</title>
+</head>
+<body>
+<!--Link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10458-->
+<!--Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<script>
+    let a = parseFloat(prompt("Nhập số thứ nhất: "));
+    let b = parseFloat(prompt("Nhập số thứ hai: "));
+    if (isNaN(a) || isNaN(b)) {
+        alert("Bạn chưa nhập đủ 2 số!");
+    } else {
+        if (a % b === 0) {
+            alert(a + " chia hết cho " + b);
+        } else {
+            alert(a + " không chia hết cho " + b);
+        }
+    }
+</script>
+</body>
+</html>

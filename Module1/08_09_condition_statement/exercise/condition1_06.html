@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</title>
+</head>
+<body>
+<!--Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10458-->
+<script>
+    let poundage = parseFloat(prompt("Nhập % hoa hồng bạn nhận"));
+    let money = parseFloat(prompt("Nhập doanh số bán hàng"));
+    if (isNaN(money) || isNaN(poundage)) {
+        alert("Bạn chưa nhập đủ thông tin");
+    } else {
+        alert("Tiền hoa hồng bạn nhận được: " + ((poundage / 100) * money).toLocaleString());
+    }
+</script>
+</body>
+</html>
