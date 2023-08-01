@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính giá điện</title>
+</head>
+<body>
+<!--Bài 10: Viết chương trình tính giá điện.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let chudien = parseFloat(prompt("Nhập số kWh điện của gia đình bạn"));
+    if (isNaN(chudien) || chudien <= 0) {
+        alert("Bạn chưa nhập số kWhd điện");
+    } else {
+        if (chudien > 0 && chudien <= 50) {
+            alert("Số tiền bạn phải trả cho " + chudien + "kWh là: " + (chudien * 1728).toLocaleString() + "đ (1.728/kWh)");
+        } else if (chudien >= 51 && chudien <= 100) {
+            alert("Số tiền bạn phải trả cho " + chudien + "kWh là: " + (chudien * 1786).toLocaleString() + "đ (1.786/kWh)");
+        } else if (chudien >= 101 && chudien <= 200) {
+            alert("Số tiền bạn phải trả cho " + chudien + "kWh là: " + (chudien * 2074).toLocaleString() + "đ (2.074/kWh)");
+        } else {
+            alert("Số tiền bạn phải trả cho " + chudien + "kWh là: " + (chudien * 2612).toLocaleString() + "đ (2.612/kWh)");
+        }
+    }
+
+</script>
+</body>
+</html>

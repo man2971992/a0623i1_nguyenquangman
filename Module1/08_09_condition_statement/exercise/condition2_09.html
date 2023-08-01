@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</title>
+</head>
+<body>
+<!--Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác. Điều kiện để a,b,c là cạnh của một tam giác là:-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let a = parseFloat(prompt("Nhập cạnh a "));
+    let b = parseFloat(prompt("Nhập cạnh b "));
+    let c = parseFloat(prompt("Nhập cạnh c "));
+    if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+        alert("Bạn chưa nhập đủ thông tin của 3 cạnh");
+    } else if (a + b > c && b + c > a && a + c > b) {
+        alert("a = " + a + ", b = " + b + ", c = " + c + " hợp thành một tam giác");
+    } else {
+        alert("a = " + a + ", b = " + b + ", c = " + c + " không hợp thành một tam giác");
+    }
+</script>
+</body>
+</html>
