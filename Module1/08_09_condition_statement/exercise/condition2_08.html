@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ
+        120 và lơn hơn 0.</title>
+</head>
+<body>
+<!--Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let age = prompt("Nhập tuổi của bạn để kiểm tra");
+    console.log(typeof age);
+    if (isNaN(age)) {
+        alert("Bạn chưa nhập tuổi");
+    } else if (age > 0 && age < 120) {
+            alert("Số bạn nhập vào là tuổi của một người. Tuổi của bạn là: " + parseInt(age));
+    } else {
+        alert("Số bạn nhập vào không phải tuổi của một người");
+    }
+</script>
+</body>
+</html>

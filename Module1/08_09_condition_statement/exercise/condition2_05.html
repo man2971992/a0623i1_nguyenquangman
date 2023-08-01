@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</title>
+</head>
+<body>
+<!--Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let a = parseFloat(prompt("Nhập cạnh a"));
+    let b = parseFloat(prompt("Nhập cạnh b"));
+    if (isNaN(a) || isNaN(b)) {
+        alert("Bạn chưa nhập đủ 2 cạnh của tam giác");
+    } else if (a <= 0 || b <= 0) {
+        alert("Cạnh góc vuông không được nhỏ hơn 0");
+    } else {
+        alert("Diện tích tam giác vuông với cạnh a = " + a + " và cạnh b= " + b + " là: " + 1 / 2 * a * b);
+    }
+</script>
+</body>
+</html>

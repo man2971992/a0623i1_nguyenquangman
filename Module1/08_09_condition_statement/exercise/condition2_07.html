@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2.</title>
+</head>
+<body>
+<!--Bài 7: Giải phương trình bậc 2.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let a = parseFloat(prompt("Nhập a: "));
+    let b = parseFloat(prompt("Nhập b: "));
+    let c = parseFloat(prompt("Nhập c: "));
+    let delta = (b * b) - (4 * a * c);
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        alert("Bạn chưa nhập đủ a,b,c");
+    } else if (a === 0) {
+        alert("Đây không phải phương trình bật 2, có 1 nghiệm duy nhất là: x = " + -c / b);
+    } else {
+        if (delta > 0) {
+            alert("Phương trình có 2 nghiệm x1 = " + (-b + Math.sqrt(delta)) / (2 * a) + ", x2 = " + (-b - Math.sqrt(delta)) / (2 * a));
+        } else if (delta === 0) {
+            alert("Phương trình có nghiệm kép x1 = x2 =" + b / (2 * a));
+        } else {
+            alert("Phương trình vô nghiệm");
+        }
+    }
+</script>
+</body>
+</html>

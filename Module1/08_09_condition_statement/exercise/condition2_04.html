@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</title>
+</head>
+<body>
+<!--Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.-->
+<!--Link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let a = parseFloat(prompt("Nhập chiều dài: "));
+    let b = parseFloat(prompt("Nhập chiều rộng: "));
+    if (isNaN(a) || isNaN(b)) {
+        alert("Bạn chưa nhập đủ 2 cạnh của hình chữ nhật");
+    } else if (a <= 0 || b <= 0) {
+        alert("Cạnh chữ nhật không được bé hơn 0");
+    } else {
+        alert("Diện thích hình chữ nhật với cạnh a = " + a + " và cạnh b = " + b + " là : " + a * b);
+    }
+</script>
+</body>
+</html>
