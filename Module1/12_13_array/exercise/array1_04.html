@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.</title>
+</head>
+<body>
+<!--Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = parseInt(prompt("Nhập phần tử thứ " + i));
+    }
+    document.write("Danh sách mảng ban đầu: " + numbers + "<br>");
+    document.write("Mảng được đảo ngược: " + numbers.reverse());
+</script>
+</body>
+</html>

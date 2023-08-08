@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<!--Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let str = prompt("Nhập một chuổi ký tự");
+    let nguyenam = "aăâeêioôơuưy";
+    let count = 0;
+    let str_nm = "";
+    for (let i = 0; i < str.length; i++) {
+        if (nguyenam.indexOf(str[i]) !== -1) {
+            count++;
+            str_nm += str[i] + " ,";
+        }
+    }
+    document.write("Chuổi bạn vừa nhập vào: " + str + "<br>");
+    document.write("Chuổi nhập vào có " + count + " ký tự nguyên âm. Các ký tự nguyên âm: " + str_nm)
+</script>
+</body>
+</html>

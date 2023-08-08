@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao
+        nhiêu số nguyên lớn hơn hoặc bằng 10.</title>
+</head>
+<body>
+<!--Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let arr = [];
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseFloat(prompt("Nhập số thứ " + i));
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 10) {
+            count++;
+        }
+    }
+    document.write("Danh sách các phần tử trong mảng: " + arr + "<br>");
+    document.write("Có " + count + " số lớn hơn 10");
+</script>
+</body>
+</html>

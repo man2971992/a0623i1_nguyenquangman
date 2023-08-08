@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10497-->
+<!--Ứng dụng từ điển-->
+<form action="#" method="get">
+    <input type="text" id="translate">
+    <input type="submit" value="Translate" onclick="trans()">
+    <p id="result"></p>
+</form>
+<script>
+    let viet = [
+        "Xin chào",
+        "Tạm biệt",
+        "Chào buổi sáng",
+        "Chào buổi tối"
+    ];
+
+    let eng = [
+        "hello",
+        "good bye",
+        "good morning",
+        "good night"
+    ];
+
+    function trans() {
+        //Chuyển chuổi nhập vào thành in thường
+        let keyword = document.getElementById("translate").value;
+        let key = "";
+        let keydow = "qwertyuiopasdfghjklzxcvbnm";
+        let keyup = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        for (let i = 0; i < keyword.length; i++) {
+            if (keydow.indexOf(keyword[i]) !== -1) {
+                key += keydow[keydow.indexOf(keyword[i])]; //keydow.indexOf(keyword[i]): chỉ số index của ký tự keyword[i] trong chuổi keydow
+            } else if (keyup.indexOf(keyword[i]) !== -1) {
+                key += keydow[keyup.indexOf(keyword[i])];
+            } else {
+                key += " ";
+            }
+        }
+
+        //Đối chiếu tìm kiếm kết quả trong mảng
+        if (eng.indexOf(key) !== -1) {
+            document.getElementById("result").innerText = "Result: " + viet[eng.indexOf(key)];
+        } else {
+            document.getElementById("result").innerText = "Result: không tìm thấy kết quả";
+        }
+    }
+</script>
+</body>
+</html>

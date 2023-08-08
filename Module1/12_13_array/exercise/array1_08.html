@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = parseInt(prompt("Nhập phần tử thứ " + i));
+    }
+    document.write("Mảng chưa được sắp xếp: " + numbers + "<br>");
+
+    document.write("Mảng sau khi được sắp xếp: " + (numbers.sort(function (a, b) {
+        return b - a;
+    })));
+</script>
+</body>
+</html>

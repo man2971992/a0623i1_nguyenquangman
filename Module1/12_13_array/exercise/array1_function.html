@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<script>
+    // link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10496
+    // Bài 1: Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. Ví dụ có mảng chuỗi như sau: myColor = ["Red", "Green", "White", "Black"];
+    document.write("<h3>Bài tập 1:</h3>")
+    let arr1 = ["Red", "Green", "White", "Black"];
+    document.write("Mảng sau khi được nối thành chuổi: " + arr1.join("+") + "<hr>"); //Dùng hàm join() hoặc toString()
+
+    document.write("<h3>Bài tập 2:</h3>");
+
+    // Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn. Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+    let numbers = prompt("Nhập một số");
+    let arr2 = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % 2 === 0 && numbers[i - 1] % 2 === 0) {
+            arr2.push("-", numbers[i]);
+        } else {
+            arr2.push(numbers[i]);
+        }
+    }
+    document.write("Kết quả: " + arr2.join("")+"<br>");
+
+    // Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa. Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+    let keyword = prompt("Nhập một chuổi");
+    let a = "qwertyuiopasdfghjklzxcvbnm";
+    let b = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    let key = "";
+    for (let i = 0; i < keyword.length; i++) {
+        if (a.indexOf(keyword[i]) !== -1) {  //Tìm chỉ số index của keyword trong chuổi a và thay đổi lại giá trị của ký lấy từ chuổi b
+            key += b[a.indexOf(keyword[i])];
+        } else if (b.indexOf(keyword[i]) !== -1) {
+            key += a[b.indexOf(keyword[i])];
+        } else {
+            key += " ";
+        }
+    }
+    document.write("Chuổi ban đầu: " + keyword + "<br>");
+    document.write("Chuổi sau khi được thay đổi: " + key);
+</script>
+</body>
+</html>

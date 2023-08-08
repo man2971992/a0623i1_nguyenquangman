@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng
+        được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+        Hiển thị mảng c.</title>
+</head>
+<body>
+<!--Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let a = [];
+    let b = [];
+    let c = [];
+    for (let i = 0; i < 10; i++) {
+        a[i] = prompt("Nhập phần tử cho mảng a ");
+        b[i] = prompt("Nhập phần tử cho mảng b");
+    }
+    document.write("Phần tử mảng a là: " + a + "<br>");
+    document.write("Phần tử mảng b là: " + b + "<br>");
+    c = a.concat(b);
+    document.write("Phần tử mảng c là: " + c);
+</script>
+</body>
+</html>

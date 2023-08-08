@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương
+        trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn
+        lại in ra "V is not in the array".</title>
+</head>
+<body>
+<!--Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let numbers = [];
+    let check = false;
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = parseFloat(prompt("Nhập phần tử thứ " + i));
+    }
+    let number = parseFloat(prompt("Nhập một số để kiểm tra "));
+    for (let i = 0; i < numbers.length; i++) {
+        if (number === numbers[i]) {
+            check = true;
+        }
+    }
+    document.write("Danh sách các phần tử trong mảng: " + numbers + "<br>");
+    if (check) {
+        document.write(number + " is in the array");
+    } else {
+        document.write(number + " is not in the array");
+    }
+</script>
+</body>
+</html>

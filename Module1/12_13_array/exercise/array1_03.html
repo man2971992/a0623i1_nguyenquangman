@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình
+        của các phần tử trong mảng.</title>
+</head>
+<body>
+<!--Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10500-->
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = parseInt(prompt("Nhập số thứ " + i));
+    }
+    let max = numbers[0];
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] >= max) {
+            max = numbers[i];
+        }
+        sum += numbers[i];
+    }
+    document.write("Danh sách các phần tử trong mảng: " + numbers + "<br>");
+    document.write("Số lớn nhất là :" + max + " .Trung bình cộng của các phần tử trong mảng là: " + sum / numbers.length);
+</script>
+</body>
+</html>
