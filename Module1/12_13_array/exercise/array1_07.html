@@ -24,13 +24,8 @@
     }
     document.write("Danh sách mảng ban đầu: " + numbers + "<br>");
     if (check) {
-        numbers_new = numbers.filter(function (v) {
-            if (v === numbers[index]) {
-                return false
-            }
-            return true;
-        });
-        document.write("Danh sách mảng sau khi xóa phần tử " + v + " là: " + numbers_new);
+        numbers.splice(index, 1);
+        document.write("Danh sách mảng sau khi xóa phần tử " + v + " là: " + numbers);
     } else {
         document.write("Phân tử " + v + " không có trong mảng");
     }
