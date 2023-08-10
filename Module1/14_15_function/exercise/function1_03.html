@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại
+        thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của
+        hai tham số</title>
+</head>
+<body>
+<!--Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10516-->
+<script>
+    function compareNum(a, b) {
+        return a > b;
+    }
+
+    let a = prompt("Nhập số a");
+    let b = prompt("Nhập số b");
+    if (compareNum(a, b)) {
+        alert(a + " lớn hơn " + b);
+    } else {
+        alert(a + " + " + b + " = " + (Number(a) + Number(b)));
+    }
+
+</script>
+</body>
+</html>
