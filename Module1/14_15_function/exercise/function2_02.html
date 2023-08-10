@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10517-->
+<script>
+    function calAcreage(c) {
+        return (c * c) / (4 * 3.14);
+    }
+
+    function calPerimeter(c) {
+        return (c * 2) * 3.14;
+    }
+
+    let a = prompt("Nhập bán kính hình tròn");
+    alert("Chu vi hình tròn là: " + calPerimeter(a) + " .Bán kính: " + calAcreage(a));
+</script>
+</body>
+</html>

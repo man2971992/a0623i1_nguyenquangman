@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó</title>
+</head>
+<body>
+<!--Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10517-->
+<script>
+    function swap(a, b) {
+        // let c = a;
+        // a = b;
+        // b = c;
+        // return [a, b];
+        return [b, a];
+    }
+
+    let n1 = prompt("Nhập số thứ nhất");
+    let n2 = prompt("Nhập số thứ hai");
+    let number = swap(n1, n2);
+    document.write("Hai số ban đầu là: n1 = " + n1 + " ,n2 = " + n2 + "<br>");
+    document.write("Hai số sau khi hoán vị: n1 = " + number[0] + " ,n2 = " + number[1] + "<br>");
+
+</script>
+</body>
+</html>

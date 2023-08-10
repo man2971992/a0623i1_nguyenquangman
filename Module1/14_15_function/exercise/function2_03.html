@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10517-->
+<script>
+    function calFactorial(n) {
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+    let a = prompt("Nhập 1 số để kiểm tra giai thừa");
+    alert("Giai thừa của " + a + ": " + calFactorial(a));
+</script>
+</body>
+</html>

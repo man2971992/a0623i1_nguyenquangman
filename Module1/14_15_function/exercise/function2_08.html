@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó</title>
+</head>
+<body>
+<!--Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10517-->
+<script>
+    function reverseArray(arr) {
+        return arr.reverse();
+    }
+
+    let a = prompt("Nhập các phần tử trong mảng");
+    let arr1 = a.split(",");
+    document.write("Danh sách các phần tử ban đầu: " + arr1 + "<br>");
+    document.write("Danh sách các phần tử sau khi đảo ngược: " + reverseArray(arr1) + "<br>");
+</script>
+</body>
+</html>

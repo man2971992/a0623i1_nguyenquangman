@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả
+        về true, ngược lại trả về false</title>
+</head>
+<body>
+<!--Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10517-->
+<script>
+    function checkNumber(n) {
+        return n > 0;
+    }
+    let a = prompt("Nhập một giá trị để kiểm tra");
+    if (checkNumber(a)) {
+        alert(a + " là số dương");
+    } else {
+        alert(a + " là số âm");
+    }
+</script>
+</body>
+</html>
