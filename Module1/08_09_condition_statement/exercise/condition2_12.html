@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi
+        xuất hàng tháng</title>
+</head>
+<body>
+<!--Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10459-->
+<script>
+    let money = parseFloat(prompt("Nhập số tiền bạn gửi"));
+    let mon = parseInt(prompt("Nhập số tháng bạn gửi tiết kiệm"));
+    let interest = parseFloat(prompt("Nhập % lãi xuất ngân hàng theo tháng"));
+    let res = money * Math.pow((1 + (interest / 100) / 12), mon);
+    if (money > 0) {
+        alert("Tiền lãi bạn nhận được là: " + res.toLocaleString());
+    } else {
+        alert("Số tiền nhập vào không được nhỏ hơn 0");
+    }
+</script>
+</body>
+</html>
