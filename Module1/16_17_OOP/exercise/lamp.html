@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
+</head>
+<body>
+<img id="lamp" src="pic_bulboff.gif">
+<p id="result">Tình trạng của đèn</p>
+<button onclick="on_off_lamp()">Turn on / off lamp</button>
+<script>
+    class ElectricLamp {
+        constructor(status_l) {
+            this.status_l = status_l = false;
+        }
+
+        turnOn() {
+            document.getElementById("lamp").src = "pic_bulbon.gif";
+            document.getElementById("result").innerText = "Đèn đang bật";
+            return this.status = true;
+        }
+
+        turnOff() {
+            document.getElementById("lamp").src = "pic_bulboff.gif";
+            document.getElementById("result").innerText = "Đèn đang tắt";
+            return this.status = false;
+        }
+
+    }
+
+    class SwtichButton {
+        constructor(status, lamp) {
+            this.status = status = false;
+            this.lamp = lamp = null;
+        }
+
+        connectToLamp(ElectricLamp) {
+            this.lamp = ElectricLamp;
+        }
+
+        switchOff() {
+            return this.status = false;
+        }
+
+        switchOn() {
+            return this.status = true;
+        }
+    }
+
+    let lamp1 = new ElectricLamp();
+    let btn_switch = new SwtichButton();
+    let count = 0;
+    let open = btn_switch.switchOff();
+
+    function on_off_lamp() {
+        btn_switch.connectToLamp(lamp1);
+        if (btn_switch.lamp !== null) {
+            if (count < 10) {
+                if (btn_switch.switchOn() && open === false) {
+                    lamp1.turnOn();
+                    count++;
+                    open = true;
+                } else {
+                    lamp1.turnOff();
+                    count++;
+                    open = false;
+                }
+            } else {
+                alert("Bạn đã bật quá 10 lần");
+            }
+        }
+
+    }
+
+</script>
+</body>
+</html>
