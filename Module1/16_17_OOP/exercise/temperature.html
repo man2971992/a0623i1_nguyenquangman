@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+<input type="text" id="doc">
+<button onclick="conver()">Conver</button>
+<p id="converk"></p>
+<p id="converf"></p>
+<script>
+    class Temperature {
+        constructor(c) {
+            this.c = c;
+        }
+
+        convertF() {
+            return this.c * 1.8 + 32;
+        }
+
+        convertKelvin() {
+            return this.c + 273.15;
+        }
+    }
+
+    function conver() {
+        let doc = parseFloat(document.getElementById("doc").value);
+        let do1 = new Temperature(doc);
+        document.getElementById("converk").innerText = "Độ kelvin: " + do1.convertKelvin();
+        document.getElementById("converf").innerText = "Độ F: " + do1.convertF();
+    }
+</script>
+</body>
+</html>
