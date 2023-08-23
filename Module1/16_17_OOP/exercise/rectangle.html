@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="wid">
+<input type="text" id="hei">
+<button onclick="display_rec()">Submit</button>
+<hr>
+<canvas id="my_rec">
+</canvas>
+<p id="acreage"></p>
+<p id="perimeter"></p>
+<script>
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+
+        calAcreage() {
+            return this.height * this.width;
+        }
+
+        calPerimeter() {
+            return (this.height + this.width) * 2;
+        }
+
+        displayRectangle() {
+            document.getElementById("my_rec").width = this.width;
+            document.getElementById("my_rec").height = this.height;
+            document.getElementById("my_rec").style.border = "1px solid red";
+        }
+    }
+
+    function display_rec() {
+        let wid = parseFloat(document.getElementById("wid").value);
+        let hei = parseFloat(document.getElementById("hei").value);
+        let rec1 = new Rectangle(hei, wid);
+        rec1.displayRectangle();
+        document.getElementById("acreage").innerText = "Diện tích hình chữ nhật: "+rec1.calAcreage();
+        document.getElementById("perimeter").innerText = "Chu vi hình chữ nhật: "+rec1.calPerimeter();
+    }
+</script>
+</body>
+</html>
