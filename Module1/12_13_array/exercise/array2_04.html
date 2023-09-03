@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình để đếm số từ trong một chuỗi</title>
+</head>
+<body>
+<!--Bài 4: Viết một chương trình để đếm số từ trong một chuỗi-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10501-->
+<script>
+    let string = prompt("Nhập 1 chuổi để kiểm tra");
+    arr = string.split(/[@,#,$,%,^,&,*,(,),{,},!,?,.,' ',|,:,>,/,;,_]/);
+    let a = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== '') {
+            // alert(arr[i]);
+            // a += arr[i];
+            a.push(arr[i]);
+        }
+    }
+    let count = a.length;
+    document.write("Chuổi đã nhập: " + string + "<br>");
+    document.write("Chuổi có " + count + " từ");
+</script>
+</body>
+</html>
