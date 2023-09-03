@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký
+        tự [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"</title>
+</head>
+<body>
+<!--Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10501-->
+<script>
+    let arr = [];
+    let n = prompt("Nhập số lượng phần tử ");
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Nhập phần tử thứ " + i);
+    }
+    document.write("Danh sách mảng ban đầu: " + arr + "<br>");
+    document.write("Danh sách mảng sau khi đảo ngược: " + arr.reverse());
+</script>
+</body>
+</html>

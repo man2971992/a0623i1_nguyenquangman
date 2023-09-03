@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong
+        mảng. </title>
+</head>
+<body>
+<!--Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.-->
+<!--link bài tập: https://james.codegym.vn/mod/assign/view.php?id=10501-->
+<script>
+    let strings = Array(10); //Mảng có 10 phần tử
+    let count = 0;
+    for (let i = 0; i < strings.length; i++) {
+        strings[i] = prompt("Nhập phần tử thứ " + i);
+    }
+    for (let i = 0; i < strings.length; i++) {
+        if (isFinite(strings[i])) { //Phương thức isFinite(): trả về true nếu giá trị mà một số hữu hạng. Các kiểu khác sẽ trả về false
+            count++;
+        }
+    }
+    document.write("Danh sách phần tử trong mảng: " + strings + "<br>");
+    document.write("Số lượng chữ số có trong mảng: " + count);
+</script>
+</body>
+</html>
