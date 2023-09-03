@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+    <!--    <link rel="stylesheet" type="text/css" href="caculator.css">-->
+    <style>
+        table {
+            border-spacing: 10px;
+        }
+
+        p {
+            height: 50px;
+            text-align: right;
+            border: 1px solid black;
+            margin: 0;
+            font-size: 40px;
+        }
+
+        .pheptinh > td {
+            text-align: center;
+            width: 100px;
+            height: 50px;
+        }
+
+        .btn {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4">
+            <input style="width: 100%; height: 50px; text-align: right; padding: 0; font-size: 30px" type="text"
+                   id="result" value="0">
+        </td>
+    </tr>
+    <tr class="pheptinh">
+        <td>
+            <button class="btn" id="btn_ngoac1" onclick="calculator('(')">(</button>
+        </td>
+        <td>
+            <button class="btn" id="btn_ngoac2" onclick="calculator(')')">)</button>
+        </td>
+        <td>
+            <button class="btn" id="btn_chidu" onclick="calculator('%')">%</button>
+        </td>
+        <td>
+            <button class="btn" id="btnac" onclick="calculator('AC')">AC</button>
+        </td>
+    </tr>
+
+    <tr class="pheptinh">
+        <td>
+            <button class="btn" id="btn7" onclick="calculator(7)">7</button>
+        </td>
+        <td>
+            <button class="btn" id="btn8" onclick="calculator(8)">8</button>
+        </td>
+        <td>
+            <button class="btn" id="btn9" onclick="calculator(9)">9</button>
+        </td>
+        <td>
+            <button class="btn" id="btnchia" onclick="calculator('/')">&divide;</button>
+        </td>
+    </tr>
+    <tr class="pheptinh">
+        <td>
+            <button class="btn" id="btn4" onclick="calculator(4)">4</button>
+        </td>
+        <td>
+            <button class="btn" id="btn5" onclick="calculator(5)">5</button>
+        </td>
+        <td>
+            <button class="btn" id="btn6" onclick="calculator(6)">6</button>
+        </td>
+        <td>
+            <button class="btn" id="btnx" onclick="calculator('x')">x</button>
+        </td>
+    </tr>
+    <tr class="pheptinh">
+        <td>
+            <button class="btn" id="btn1" onclick="calculator(1)">1</button>
+        </td>
+        <td>
+            <button class="btn" id="btn2" onclick="calculator(2)">2</button>
+        </td>
+        <td>
+            <button class="btn" id="btn3" onclick="calculator(3)">3</button>
+        </td>
+        <td>
+            <button class="btn" id="btntru" onclick="calculator('-')">-</button>
+        </td>
+    </tr>
+    <tr class="pheptinh">
+        <td>
+            <button class="btn" id="btn0" onclick="calculator(0)">0</button>
+        </td>
+        <td>
+            <button class="btn" id="btncham" onclick="calculator('.')">.</button>
+        </td>
+        <td>
+            <button class="btn" id="btnbang" onclick="calculator('=')">=</button>
+        </td>
+        <td>
+            <button class="btn" id="btnplus" onclick="calculator('+')">+</button>
+        </td>
+    </tr>
+</table>
+<script>
+    let first_value = 0;
+    let secon_value = 0;
+    let toantu = "";
+    let save_secon_value;
+    let save_first_value;
+
+    function calculator(para) {
+        let res = document.getElementById("result"); /* giá trị tại ô kết quả*/
+        // alert(res);
+        switch (para) {
+            case "+":
+                res.value = SaveValueFist(first_value, secon_value, "+");
+                return;
+            case "-":
+                res.value = SaveValueFist(first_value, secon_value, "-");
+                return;
+            case "x":
+                res.value = SaveValueFist(first_value, secon_value, "x");
+                return;
+            case "/":
+                res.value = SaveValueFist(first_value, secon_value, "/");
+                return;
+            case "=":
+                switch (toantu) {
+                    case "+":
+                        first_value = parseFloat(first_value) + parseFloat(secon_value);
+                        res.value = first_value;
+                        break;
+                    case "-":
+                        first_value = parseFloat(first_value) - parseFloat(secon_value);
+                        res.value = first_value;
+                        break;
+                    case "x":
+                        first_value = parseFloat(first_value) * parseFloat(secon_value);
+                        res.value = first_value;
+                        break;
+                    case "/":
+                        first_value = parseFloat(first_value) / parseFloat(secon_value);
+                        res.value = first_value;
+                }
+                secon_value = 0;
+                return;
+            case "AC":
+                first_value = 0;
+                secon_value = 0;
+                toantu = "";
+                document.getElementById("result").value = 0;
+                return;
+        }
+
+        /*Lưu gia trị của 2 số first_value và secon_value*/
+        if (toantu.length > 0) {
+            secon_value = secon_value === 0 ? para : secon_value.toString() + para; /*Nếu số thứ 2 (secon_value) bằng 0 thì gán giá trị là para ngược lại nối chuổi*/
+            res.value = secon_value;
+            save_secon_value = secon_value;
+        } else {
+            first_value = first_value === 0 ? para : first_value.toString() + para;
+            res.value = first_value;
+            save_first_value = first_value;
+        }
+    }
+
+    function SaveValueFist(f, s, t) {
+        toantu = t;
+        first_value = parseFloat(f) + parseFloat(s);
+        return first_value;
+    }
+
+</script>
+</body>
+</html>
