@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tivi</title>
+    <style>
+        #tivi, #de_tivi, #remote {
+            width: 40%;
+            margin: 10px auto;
+            border-radius: 5px 5px;
+            border: 5px solid black;
+        }
+
+        #tivi {
+            height: 300px;
+            background: #2b2f32;
+        }
+
+        #de_tivi {
+            width: 20%;
+        }
+
+        #remote {
+            height: 120px;
+            margin-top: 100px;
+
+        }
+
+        table {
+            margin: auto;
+            border-spacing: 15px;
+        }
+
+        button {
+            width: 50px;
+            height: 35px;
+            /*font-size: 12px;*/
+            border-radius: 5px 5px;
+        }
+
+        #vol {
+            float: right;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="tivi">
+</div>
+<div id="de_tivi"></div>
+<div id="remote">
+    <table>
+        <tr>
+            <td>
+                <button onclick="channel(0)">0</button>
+            </td>
+            <td>
+                <button onclick="channel(1)">1</button>
+            </td>
+            <td>
+                <button onclick="channel(2)">2</button>
+            </td>
+            <td>
+                <button onclick="channel(3)">3</button>
+            </td>
+            <td>
+                <button onclick="channel(4)">4</button>
+            </td>
+            <td>
+                <button onclick="channel(5)">5</button>
+            </td>
+            <td>
+                <button onclick="channel(6)">6</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="channel(7)">7</button>
+            </td>
+            <td>
+                <button onclick="channel(8)">8</button>
+            </td>
+            <td>
+                <button onclick="channel(9)">9</button>
+            </td>
+            <td>
+                <button onclick="vol_up()">Vol Up</button>
+            </td>
+            <td>
+                <button onclick="vol_down()">Vol Down</button>
+            </td>
+            <td>
+                <button onclick="open_tivi()">On/Off Tivi</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    class Remote {
+        constructor(code, c_channel, c_volume) {
+            this.code = code;
+            this.c_channel = c_channel;
+            this.c_volume = c_volume;
+        }
+
+        controlChannel(channel) {
+            this.c_channel = channel;
+        }
+
+        volumeUp() {
+            return this.c_volume++;
+        }
+
+        volumeDown() {
+            return this.c_volume--;
+        }
+    }
+
+    class Tivi {
+        constructor(channel, volume, status, code_tivi) {
+            this.channel = channel;
+            this.volume = volume;
+            this.status = status;
+            this.code_tivi = code_tivi
+        }
+
+        // openTivi() {
+        //     return this.status = true;
+        // }
+
+        controlChannel(channel) {
+            this.channel = channel;
+        }
+
+        volumeUp() {
+            return this.volume++;
+        }
+
+        volumeDown() {
+            return this.volume--;
+        }
+    }
+
+    let remote1 = new Remote("tivi_sony", 0, 10);
+    let tivi1 = new Tivi(0, 10, false, "tivi_sony");
+    if (remote1.code === tivi1.code_tivi) {
+        function open_tivi() {
+            if (!tivi1.status) {
+                document.getElementById("tivi").style.backgroundColor = "white";
+            } else {
+                // tivi1.status = false;
+                document.getElementById("tivi").innerHTML = "";
+                document.getElementById("tivi").style.backgroundColor = "#2b2f32";
+            }
+            tivi1.status = !tivi1.status;
+        }
+
+        function vol_up() {
+            if (tivi1.status) {
+                tivi1.volumeUp();
+                document.getElementById("vol").innerText = tivi1.volume;
+            } else {
+                alert("Tivi chưa được mở");
+            }
+        }
+
+        function vol_down() {
+            if (tivi1.status) {
+                tivi1.volumeDown();
+                document.getElementById("vol").innerText = tivi1.volume;
+            } else {
+                alert("Tivi chưa được mở");
+            }
+        }
+
+        function channel(channel) {
+            let res = "";
+            let screen = document.getElementById("tivi");
+            if (tivi1.status) {
+                switch (channel) {
+                    case 0:
+                        res = '<video width="100%" height="100%" controls="controls"><source src="video1.mp4"></video>';
+                        screen.innerHTML = res;
+                        break;
+                    case 1:
+                        res = '<video width="100%" height="100%" controls="controls"><source src="video2.mp4"></video>';
+                        screen.innerHTML = res;
+                        break;
+                    case 2:
+                        screen.style.backgroundColor = "blue";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 3:
+                        screen.style.backgroundColor = "green";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 4:
+                        screen.style.backgroundColor = "#918181";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 5:
+                        screen.style.backgroundColor = "#f2b5b5";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 6:
+                        screen.style.backgroundColor = "#6b0a0a";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 7:
+                        screen.style.backgroundColor = "#9b9b9b";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 8:
+                        screen.style.backgroundColor = "#f7a0a0";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                    case 9:
+                        screen.style.backgroundColor = "#af8383";
+                        res = "<div id='vol'>" + tivi1.volume + "</div>";
+                        screen.innerHTML = res;
+                        break;
+                }
+            } else {
+                alert("Tivi chưa được mở");
+            }
+        }
+    }
+    // console.log(document);
+</script>
+</body>
+</html>
