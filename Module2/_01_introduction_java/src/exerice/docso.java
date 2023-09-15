@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class docso {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int $int = 5;
         System.out.println("Nhập 1 số: ");
         int num = input.nextInt();
         if (num >= 0 && num < 10) {
