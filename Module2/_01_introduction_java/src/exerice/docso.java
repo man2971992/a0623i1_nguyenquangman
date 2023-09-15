@@ -1,9 +1,11 @@
 package exerice;
 
 import java.util.Scanner;
+
 public class docso {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        int $int = 5;
         System.out.println("Nhập 1 số: ");
         int num = input.nextInt();
         if (num >= 0 && num < 10) {
@@ -60,7 +62,7 @@ public class docso {
         }
     }
 
-    public static String read(int tens, int one) {
+    static String read(int tens, int one) {
         String t = null, o = null;
         switch (tens) {
             case 2 -> t = "Twenty";
