@@ -14,7 +14,7 @@ public class Array_min {
         System.out.println("Danh sách phần tử mảng vừa nhập:" + Arrays.toString(arr));
 
         int min = arr[0];
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 1; i < arr.length; i++) {
             if (arr[i] < min) {
                 min = arr[i];
             }
