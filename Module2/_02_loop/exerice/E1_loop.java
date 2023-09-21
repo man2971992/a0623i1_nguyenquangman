@@ -6,7 +6,7 @@ public class E1_loop {
     public static void main(String[] args) {
         int choice = -1;
         Scanner input = new Scanner(System.in);
-        while (choice != 0) {
+        while (true) {
             System.out.println("1. Print the rectangle");
             System.out.println("2. Print the square triangle (The corner is square at 4 different angles: top-left, top-right, botton-left, botton-right)");
             System.out.println("3. Print isosceles triangle");
@@ -14,6 +14,8 @@ public class E1_loop {
             System.out.print("Enter a choice: ");
             choice = input.nextInt();
             switch (choice) {
+                case 0:
+                    System.exit(0);
                 case 1:
                     for (int i = 0; i < 4; i++) {
                         for (int j = 0; j < 5; j++) {
@@ -68,15 +70,15 @@ public class E1_loop {
                     }
                     break;
                 case 3:
-                    for (int i = 0; i < 5; i++) {
-                        for (int j = 0; i < 5; j++) {
-
+                    String star = "*"; //Tạo 1 biến chứa * ban đầu
+                    for (int i = 0; i < 7; i++) {
+                        String space = ""; //Khai báo biến space tại đây để gán lại khoảng trắng sau mỗi lần lặp
+                        for (int j = i; j < 7; j++) { //Cho j = i để tạo khoảng trắng giảm dần từ trên xuông dưới
+                            space += " "; //Tạo các khoảng trắng giảm dần từ trên xuống
                         }
-                        System.out.println(" ");
+                        System.out.println(space + star);
+                        star = "* " + star; //Xuống 1 hàng thì tăng lên 1 sao
                     }
-                    break;
-                case 4:
-                    System.exit(0);
                     break;
                 default:
                     System.out.println("No choice !");
