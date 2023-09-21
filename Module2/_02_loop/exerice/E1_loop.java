@@ -70,6 +70,14 @@ public class E1_loop {
                     }
                     break;
                 case 3:
+                    //Chiều cao h = 7
+                    //        sssssss*
+                    //        ssssss* *
+                    //        sssss* * *
+                    //        ssss* * * *
+                    //        sss* * * * *
+                    //        ss* * * * * *
+                    //        s* * * * * * *
                     String star = "*"; //Tạo 1 biến chứa * ban đầu
                     for (int i = 0; i < 7; i++) {
                         String space = ""; //Khai báo biến space tại đây để gán lại khoảng trắng sau mỗi lần lặp

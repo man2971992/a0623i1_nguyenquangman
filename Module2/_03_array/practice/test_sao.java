@@ -17,5 +17,14 @@ public class test_sao {
             System.out.println(space + star);
             star = "* " + star; //Xuống 1 hàng thì tăng lên 1 sao
         }
+//        System.out.println(m(1, 2, 3));
     }
+
+//    static int m(int... x) {
+//        int b = 0;
+//        for (int a : x) {
+//            b += a;
+//        }
+//        return b;
+//    }
 }
