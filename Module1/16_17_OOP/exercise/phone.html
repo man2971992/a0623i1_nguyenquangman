@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone</title>
+    <style>
+        #phone1 {
+            width: 300px;
+            height: 550px;
+            border: 5px solid black;
+            border-radius: 15px 15px;
+            float: left;
+        }
+
+        .home_screen {
+            width: 100%;
+            height: 80%;
+            background-color: #2b2f32;
+        }
+
+        .top {
+            width: 100%;
+            height: 10%;
+            background-color: black;
+        }
+
+        .bottom {
+            width: 100%;
+            height: 10%;
+            background-color: black;
+        }
+
+        .home {
+            width: 15%;
+            height: 75%;
+            margin: auto;
+            border-radius: 50% 50%;
+            border: 2px solid white;
+            position: relative;
+            top: 7px;
+        }
+
+        .write_mail {
+            position: relative;
+            top: 100px;
+            left: 20px;
+        }
+
+        #phone2 {
+            width: 300px;
+            height: 550px;
+            border: 5px solid black;
+            border-radius: 15px 15px;
+            float: left;
+            margin-left: 200px;
+        }
+
+        .pin {
+            width: 30px;
+            height: 10px;
+            position: relative;
+            left: 5%;
+            border: 1px solid white;
+            font-size: small;
+            color: white;
+        }
+
+        .inbox > h3 {
+            text-align: center;
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        .box_list > li {
+            display: inline;
+            margin-right: 5px;
+        }
+
+        .addpin {
+            float: left;
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            margin-left: 20px
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="phone1">
+        <div class="top"></div>
+        <div class="home_screen">
+        </div>
+        <div class="bottom">
+            <div class="home" onclick="open_iphone()"></div>
+        </div>
+    </div>
+    <div class="addpin" onclick="addBat()">
+        Xạc Pin cho Iphone
+    </div>
+    <div id="phone2">
+        <div style="background: #2b2f32" class="top">
+            <div style="width: 50px; border: 5px solid black; border-radius: 10px 10px; position: relative; top: 10px;margin: 0 auto"></div>
+        </div>
+        <div class="home_screen" id="screen_nokia">
+           
+        </div>
+        <div style="background: #2b2f32;" class="bottom">
+            <div style="border: 2px solid #5c636a; " class="home" onclick="open_nokia()"></div>
+        </div>
+    </div>
+</div>
+<script>
+    class Mobile {
+        constructor(pin, draft, inbox, sent, status, phone_name) {
+            this.pin = pin;
+            this.draft = draft;
+            this.inbox = inbox;
+            this.sent = sent;
+            this.status = status;
+            this.phone_name = phone_name;
+        }
+
+        //Kiểm tra điện thoại bật hay tắt
+        checkPhone() {
+            return this.status ? true : false;
+        }
+
+        //Mở phone
+        openPhone() {
+            return this.status = true;
+        }
+
+        offPhone() {
+            return this.status = false;
+        }
+
+        //xạc Pin
+        recharBattery(percent) {
+            this.pin = percent;
+        }
+
+        //soạn tin nhắn (Đưa vào vùng nhớ tin nhắn nháp)
+        draftMessage(add, mess) {
+            if (this.status) {
+                this.draft.unshift(mess);
+                this.draft.unshift(add);
+                this.pin--;
+            } else {
+                return "Your phone is off";
+            }
+        }
+
+        //Nhận tin nhắn
+        receiveMessages(add, mess) {
+            if (this.status) {
+                this.inbox.unshift(mess);
+                this.inbox.unshift(add);
+            } else {
+                return "Your phone is off";
+            }
+        }
+
+        //Gửi tin nhắn
+        sendMessage(add, mess) {
+            if (this.status) {
+                add.inbox.unshift(mess);
+                add.inbox.unshift(this.phone_name);
+                this.sent.unshift(mess);
+                this.sent.unshift(this.phone_name);
+                this.pin--;
+            } else {
+                return "Your phone is off";
+            }
+
+        }
+
+        //Xem tin nhắn trong hộp thư đến
+        seeInbox() {
+            if (this.status) {
+                this.pin--;
+                for (let i = 0; i < this.inbox.length; i += 2) {
+                    alert("Tin nhắn " + ((i / 2) + 1) + " Người gửi: " + this.inbox[i] + ", Nội dung: " + this.inbox[i + 1]);
+                }
+            } else {
+                return "Your phone is off";
+            }
+        }
+
+        //Xem tin nhắn đã gửi
+        seeSent() {
+            if (this.status) {
+                this.pin--;
+                for (let i = 0; i < this.sent.length; i += 2) {
+                    alert("Tin nhắn " + ((i / 2) + 1) + " Người gửi: " + this.sent[i] + ", Nội dung: " + this.sent[i + 1]);
+                }
+            } else {
+                alert("Your phone is off")
+            }
+        }
+    }
+
+    let iphone = new Mobile(50, [], [], [], false, "Iphone 7");
+    let nokia = new Mobile(100, [], [], [], false, "Nokia sida");
+    let main_screen =
+        "<button onclick=\"mail_box(iphone)\">Hộp thư đến</button>\n" +
+        "<button onclick=\"mail_draft(iphone)\">Tin nháp</button>\n" +
+        "<button onclick=\"see_sent(iphone)\">Tin đã gửi</button>\n" +
+        "<lable id='pin_iphone' class='pin'>100%</lable>\n" +
+        "            <div class=\"write_mail\">\n" +
+        "                <h3 style=\"margin: 0; color: white;padding-bottom: 30px\">Soạn tin nhắn</h3>\n" +
+        "                <input id='address1' style=\"width: 235px\" type=\"text\" placeholder=\"Số điện thoại nhận\">\n" +
+        "                <textarea id='mess1' cols=\"30\" rows=\"10\" placeholder=\"Nội dung tin nhắn\">\n" +
+        "                               </textarea>\n" +
+        "                <br>\n" +
+        "                <button onclick='send_mail()'>Gửi</button>\n" +
+        "<button onclick='draft_mail(iphone)'>Lưu bản nháp</button>" +
+        "            </div>";
+    let main_screen_nokia = "  <button onclick=\"mail_box(nokia)\">Hộp thư đến</button>\n" +
+        "            <button onclick=\"mail_draft(nokia)\">Tin nháp</button>\n" +
+        "            <button onclick=\"see_sent(nokia)\">Tin đã gửi</button>\n" +
+        "<lable id='pin_nokia' class='pin'>100%</lable>" +
+        "            <div class=\"write_mail\">\n" +
+        "                <h3 style=\"margin: 0; color: white;padding-bottom: 30px\">Soạn tin nhắn</h3>\n" +
+        "                <input id='nokia' style=\"width: 235px\" type=\"text\" placeholder=\"Số điện thoại nhận\">\n" +
+        "                <textarea id='nokia_mess' cols=\"30\" rows=\"10\" placeholder=\"Nội dung tin nhắn\">\n" +
+        "                               </textarea>\n" +
+        "                <br>\n" +
+        "                <button onclick='send_mail_nokia()'>Gửi</button>\n" +
+        "<button onclick='draft_mail(nokia)'>Lưu bản nháp</button>" +
+        "            </div>";
+
+    //Iphone
+    function open_iphone() {
+        if (iphone.checkPhone() == false && iphone.pin > 0) {
+            iphone.openPhone();
+            document.getElementsByClassName("home_screen")[0].style.backgroundImage = "url('nen_iphone.jpg')";
+            document.getElementsByClassName("home_screen")[0].style.backgroundPosition = "center";
+            document.getElementsByClassName("home_screen")[0].style.backgroundSize = "100% 100%";
+            document.querySelector('div.home_screen').innerHTML = main_screen;
+            document.getElementById("pin_iphone").innerText = iphone.pin;
+        } else {
+            document.querySelector('div.home_screen').innerHTML = "";
+            document.getElementsByClassName("home_screen")[0].style.backgroundImage = "";
+            iphone.offPhone();
+            out_off_bat();
+        }
+    }
+
+    function send_mail() {
+        let address = document.getElementById("address1").value;
+        let message = document.getElementById("mess1").value;
+        if (address === "nokia") {
+            iphone.sendMessage(nokia, message);
+            console.log(iphone.sent);
+            document.getElementById("pin_iphone").innerText = iphone.pin;
+            out_off_bat();
+        } else {
+            alert("Địa chỉ điên thoại này không tồn tại");
+        }
+    }
+
+    function mail_box(object) {
+        object.seeInbox();
+        if (object === iphone) {
+            document.getElementById("pin_iphone").innerText = object.pin;
+            out_off_bat();
+        }
+        if (object === nokia) {
+            document.getElementById("pin_nokia").innerText = object.pin;
+            out_off_bat_nokia();
+        }
+
+    }
+
+    function see_sent(object) {
+        object.seeSent();
+        if (object === iphone) {
+            document.getElementById("pin_iphone").innerText = object.pin;
+            out_off_bat();
+        }
+        if (object === nokia) {
+            document.getElementById("pin_nokia").innerText = object.pin;
+            out_off_bat_nokia();
+        }
+    }
+
+    function out_off_bat() {
+        if (iphone.pin === 0) {
+            document.querySelector('div.home_screen').innerHTML = "";
+            document.getElementsByClassName("home_screen")[0].style.backgroundImage = "";
+            alert("Điện thoai đã hết Pin");
+            iphone.offPhone();
+        }
+    }
+
+    function addBat() {
+        iphone.recharBattery(100);
+        alert("Đã xạc đầy Pin, bạn có thể mở điện thoại");
+    }
+
+    function draft_mail(object) {
+        let address = document.getElementById("address1").value;
+        let message = document.getElementById("mess1").value;
+        object.draftMessage(address, message);
+        // console.log(object.draft);
+    }
+
+    function mail_draft(object) {
+        for (let i = 0; i < object.draft.length; i += 2) {
+            alert("Tin nhắn thứ " + ((i / 2) + 1) + " người gửi: " + object.draft[(i / 2)] + " ,nội dung: " + object.draft[(i / 2) + 1]);
+        }
+    }
+
+    //nokia
+    function open_nokia() {
+        if (nokia.checkPhone() == false && nokia.pin > 0) {
+            nokia.openPhone();
+            document.getElementsByClassName("home_screen")[1].style.backgroundImage = "url('nen_iphone.jpg')";
+            document.getElementsByClassName("home_screen")[1].style.backgroundPosition = "center";
+            document.getElementsByClassName("home_screen")[1].style.backgroundSize = "100% 100%";
+            document.querySelector('div#screen_nokia').innerHTML = main_screen_nokia;
+            document.getElementById("pin_nokia").innerText = nokia.pin;
+        } else {
+            document.querySelector('div#screen_nokia').innerHTML = "";
+            document.getElementsByClassName("home_screen")[1].style.backgroundImage = "";
+            nokia.offPhone();
+            out_off_bat_nokia();
+        }
+    }
+
+    function send_mail_nokia() {
+        let address = document.getElementById("nokia").value;
+        let message = document.getElementById("nokia_mess").value;
+        if (address === "iphone") {
+            nokia.sendMessage(iphone, message);
+            document.getElementById("pin_nokia").innerText = nokia.pin;
+            out_off_bat_nokia();
+        } else {
+            alert("Địa chỉ điên thoại này không tồn tại");
+        }
+    }
+
+    function out_off_bat_nokia() {
+        if (nokia.pin === 0) {
+            document.querySelector('div#screen_nokia').innerHTML = "";
+            document.getElementsByClassName("home_screen")[1].style.backgroundImage = "";
+            alert("Điện thoai đã hết Pin");
+            nokia.offPhone();
+        }
+    }
+
+</script>
+</body>
+</html>
